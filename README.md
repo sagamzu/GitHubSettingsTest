@@ -1,0 +1,2 @@
+# GitHubSettingsTest
+Test GitHub settings
