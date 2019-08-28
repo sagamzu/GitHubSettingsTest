@@ -5,6 +5,7 @@
 
 trigger:
 - master
+- develop
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -19,7 +20,7 @@ steps:
   displayName: 'Run a multi-line script'
 
 - script: |
-  npm install
-  npm run build
-  npm test
+    npm install
+    npm run build
+    npm test
   displayName: 'insta, build,run'
