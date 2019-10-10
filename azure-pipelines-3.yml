@@ -10,8 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: npm install
+- script: |
+   npm install
+   npm test
   displayName: 'Run a one-line script'
-
-- script: npm test
-  displayName: 'Run a multi-line script'
