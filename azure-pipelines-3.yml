@@ -10,8 +10,17 @@ pr:
  branches:
    include:
      - '*'
+ paths:
+    include:
+    - yamlTests/*
+    exclude:
+    - yamlTests/README.md
+
 pool:
   vmImage: 'ubuntu-latest'
+
+
+
 
 steps:
 - task: Npm@1
@@ -19,6 +28,8 @@ steps:
     command: 'install'
 
 - script: npm install yaml-validator
+
+- script: const validator = new YamlValidator(); validator.validate(files);
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
