@@ -18,6 +18,8 @@ steps:
   inputs:
     command: 'install'
 
+- script: npm install yaml-validator
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
