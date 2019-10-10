@@ -29,7 +29,7 @@ steps:
 
 - script: npm install yaml-validator
 
-- script: const validator = new YamlValidator(); validator.validate(files);
+- script: const validator = new YamlValidator();
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
