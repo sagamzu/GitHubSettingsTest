@@ -21,3 +21,9 @@ steps:
 - script: |
     npm install
   displayName: 'npm'
+
+  paths:
+    include:
+    - docs/*
+    exclude:
+    - docs/README.md
