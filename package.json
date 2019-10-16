@@ -10,7 +10,7 @@
     "yaml-validator": "^2.2.0",
     "typescript": "3.5.3"
   },
-  "homepage": https://github.com/SaraGamzu/GitHubSettingsTest",
+  "homepage": "https://github.com/SaraGamzu/GitHubSettingsTest",
   "repository": {
     "type": "git",
     "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
