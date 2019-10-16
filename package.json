@@ -5,8 +5,6 @@
     "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
   },
   "version": "0.1.0",
-  "description": "Tests for Azure REST API Specifications",
-  "license": "MIT",
   "devDependencies": {
     "@azure/avocado": "^0.6.0",
     "yaml-validator": "^2.2.0"
