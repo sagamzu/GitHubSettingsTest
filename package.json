@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "private": true,
+  "author": {
+    "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
+  },
+  "version": "0.1.0",
+  "description": "Tests for Azure REST API Specifications",
+  "license": "MIT",
+  "devDependencies": {
+    "@azure/avocado": "^0.6.0",
+    "yaml-validator": "^2.2.0"
+    "typescript": "3.5.3"
+  },
+  "homepage": https://github.com/SaraGamzu/GitHubSettingsTest",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
+  }
+}
