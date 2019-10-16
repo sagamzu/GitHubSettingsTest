@@ -14,5 +14,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
+  },
+   "scripts": {
+    "tsc": "tsc"
   }
 }
