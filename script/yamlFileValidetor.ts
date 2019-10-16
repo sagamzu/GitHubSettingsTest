@@ -5,8 +5,8 @@ const main = async () => {
   const config = cli.defaultConfig();
   const pr = await devOps.createPullRequestProperties(config);
   if (pr === undefined) {
-    logWarn("Not in CI environment. Run against all the spec json.");
-    return verboseExec(`???????????????????`);
+     console.log(`!!!!!!!!!!!!!!!!!! pr is undefined `);
+    return ;
   }
 
   const changedJsonFiles = await pr.structuralDiff()
@@ -26,7 +26,7 @@ const main = async () => {
 
 main().then(retCode => {
   if (retCode !== 0) {
-    logError('Please fix the error or add words to ./custom-words.txt');
+    console.log(`!!!!!!!!!!!!!!!!!!  ERROR `);
   }
   process.exit(retCode);
 });
