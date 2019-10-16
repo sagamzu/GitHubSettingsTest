@@ -34,7 +34,7 @@ steps:
 
 - script: npm install yaml-validator
 
-- script: const validator = new YamlValidator();
+- script: yaml-validator azure-pipelines.yml
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
