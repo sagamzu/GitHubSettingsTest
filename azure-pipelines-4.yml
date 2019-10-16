@@ -17,4 +17,4 @@ variables:
   PR_ONLY: 'true'
 
 jobs:
-- template: .azure-pipelines/Spellcheck.yml
+- template: .azure-pipelines/YamlFileValidetor.yaml
