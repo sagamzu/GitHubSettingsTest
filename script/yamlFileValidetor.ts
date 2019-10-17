@@ -15,7 +15,7 @@ const main = async () => {
   }
 
   const changedJsonFiles = await pr.structuralDiff()
-    .filter(filePath => filePath.endsWith('.json') && filePath.startsWith('TestFolder/'))
+    .filter(filePath => filePath.endsWith('.json') && filePath.contains('TestFolder/'))
     .toArray();
   if (changedJsonFiles.length === 0) {
     console.log("No changed spec json file");
