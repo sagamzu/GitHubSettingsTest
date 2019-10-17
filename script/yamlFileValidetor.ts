@@ -16,8 +16,7 @@ const main = async () => {
 
   const changedJsonFiles1 = await pr.structuralDiff().toArray();
   console.log(changedJsonFiles1.length);
-  const changedJsonFiles=  changedJsonFiles1.filter(filePath => filePath.endsWith('.yaml') && filePath.includes('TestFolder'))
-    .toArray();
+  const changedJsonFiles=  changedJsonFiles1.filter(filePath => filePath.endsWith('.yaml') && filePath.includes('TestFolder'));
   
   
   if (changedJsonFiles.length === 0) {
