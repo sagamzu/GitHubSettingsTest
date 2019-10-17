@@ -2,20 +2,24 @@
   "name": "test",
   "private": true,
   "author": {
+    "name": "sdfsdf",
     "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@azure/avocado": "^0.6.0",
-    "yaml-validator": "^2.2.0",
-    "typescript": "3.5.3"
+    "@azure/avocado": "^0.6.1",
+    "typescript": "3.5.3",
+    "yaml-validator": "^2.2.0"
   },
   "homepage": "https://github.com/SaraGamzu/GitHubSettingsTest",
   "repository": {
     "type": "git",
     "url": "git@github.com:SaraGamzu/GitHubSettingsTest.git"
   },
-   "scripts": {
+  "scripts": {
     "tsc": "tsc"
+  },
+  "dependencies": {
+    "yaml-lint": "^1.2.4"
   }
 }
