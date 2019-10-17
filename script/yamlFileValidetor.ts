@@ -24,9 +24,20 @@ const main = async () => {
     return 0;
   }
 
+  const options = {
+  structure: {
+    name: 'string',
+    arrayObject: [
+      {
+        item1: ['string'],
+        'item2?': 'string'
+      }
+    ]
+
+  }};
 
   //let retCode = 0;
-  const validator = new YamlValidator();
+  const validator = new YamlValidator(options);
     validator.validate(changedJsonFiles);
     validator.report();
     return retCode;
