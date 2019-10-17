@@ -35,7 +35,7 @@ const main = async () => {
     ]
 
   },
-  onWarning: function (error, filepath) {
+  onWarning: function () {
      retCode = 1;
   }
   };
