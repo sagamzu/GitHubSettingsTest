@@ -20,7 +20,7 @@ const main = async () => {
     .toArray();
   
   
-  if (changedJsonFiles.length === 0) {
+  if (changedJsonFiles1.length === 0) {
     console.log("No changed spec json file");
     return 0;
   }
