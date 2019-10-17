@@ -34,7 +34,11 @@ const main = async () => {
       }
     ]
 
-  }};
+  },
+  onWarning: function (error, filepath) {
+     retCode = 1;
+  }
+  };
 
   //let retCode = 0;
   const validator = new YamlValidator(options);
