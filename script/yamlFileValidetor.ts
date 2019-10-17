@@ -24,15 +24,9 @@ const main = async () => {
     return 0;
   }
 
-  const options = {
-    onWarning: function (error:any, filepath:any) {
-      retCode = 1;
-      console.log(filepath + ' has error: ' + error);
-    }
-  };
 
   //let retCode = 0;
-  const validator = new YamlValidator(options);
+  const validator = new YamlValidator();
     validator.validate(changedJsonFiles);
     validator.report();
     return retCode;
