@@ -14,13 +14,13 @@ const main = async () => {
     return ;
   }
 
-  const changedJsonFiles1 = await pr.structuralDiff();
-  console.log(changedJsonFiles1);
+  const changedJsonFiles1 = await pr.structuralDiff().toArray();
+  console.log(changedJsonFiles1.length);
   const changedJsonFiles=  changedJsonFiles1.filter(filePath => filePath.endsWith('.yaml') && filePath.includes('TestFolder'))
     .toArray();
   
   
-  if (changedJsonFiles1.length === 0) {
+  if (changedJsonFiles.length === 0) {
     console.log("No changed spec json file");
     return 0;
   }
