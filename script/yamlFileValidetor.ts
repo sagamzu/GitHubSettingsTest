@@ -4,7 +4,7 @@ const YamlValidator = require('yaml-validator');
 
 
 const main = async () => {
-  let retCode = 0;
+  //let retCode = 0;
   
   const config = cli.defaultConfig();
   //config.env
@@ -34,16 +34,18 @@ const main = async () => {
       }
     ]
 
-  },
-  onWarning: function () {
-     retCode = 1;
   }
   };
 
-  //let retCode = 0;
+  let retCode = 0;
   const validator = new YamlValidator(options);
     validator.validate(changedJsonFiles);
-    validator.report();
+    //validator.report();
+  if(validator.inValidFilesCount > 0){
+       console.log(`${validator.logs.join('\r\n')}`);
+       retCode = 1;
+  }
+
     return retCode;
 }
 
