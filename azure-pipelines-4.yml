@@ -18,3 +18,4 @@ variables:
 
 jobs:
 - template: .azure-pipelines/YamlFileValidetor.yaml
+- template: .azure-pipelines/YamlFileValidetor1.yaml
