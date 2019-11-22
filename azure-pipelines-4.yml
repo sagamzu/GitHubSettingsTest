@@ -7,8 +7,6 @@ name: "Azure OpenAPI"
 
 trigger: none
 
-variables:
-  PR_ONLY: 'true'
 
 jobs:
 - template: .azure-pipelines/YamlFileValidetor.yaml
