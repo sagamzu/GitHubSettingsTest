@@ -5,9 +5,7 @@
 
 name: "Azure OpenAPI"
 
-trigger: none
-
-pr:
+trigger:
 - master
 
 jobs:
