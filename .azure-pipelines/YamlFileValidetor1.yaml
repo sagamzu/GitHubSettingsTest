@@ -3,5 +3,5 @@ jobs:
   pool:
     vmImage: 'Ubuntu 16.04'
   steps:
-  - script: 'npm run tsc && node script/yamlFileValidetor.js'
+  - script: 'npm run tsc && node script/newTestScript.js'
     displayName: 'Yaml File Validation1'
