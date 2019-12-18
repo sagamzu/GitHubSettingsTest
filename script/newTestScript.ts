@@ -15,6 +15,10 @@ export async function IsValidYamlFile(filePath:string): Promise<Boolean> {
 
 const main = async () => {
     const pullRequestDiffFiles = await getPullRequestDiffFiles();
+    if(pullRequestDiffFiles === null){
+        console.log("No changes in yaml file");
+        return 0;
+    }
     const changedYamlFiles = pullRequestDiffFiles.filter(filePath => filePath.endsWith('.yaml'));
 
     if (changedYamlFiles.length === 0) {
