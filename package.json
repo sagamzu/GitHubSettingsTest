@@ -8,6 +8,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "@azure/avocado": "^0.6.1",
+    "@types/js-yaml": "^3.12.1",
     "typescript": "3.5.3",
     "yaml-validator": "^2.2.0",
     "js-yaml": "^3.13.1"
