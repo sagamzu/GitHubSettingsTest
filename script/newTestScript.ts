@@ -2,7 +2,7 @@ import { getPullRequestDiffFiles } from './utils';
 import yaml from 'js-yaml';
 import fs from 'fs';
 
-export async function IsValidYamlFile(filePath:string): Promise<Boolean> {
+export function IsValidYamlFile(filePath:string):Boolean{
     try {
         yaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
         return true;
