@@ -9,7 +9,8 @@
   "devDependencies": {
     "@azure/avocado": "^0.6.1",
     "typescript": "3.5.3",
-    "yaml-validator": "^2.2.0"
+    "yaml-validator": "^2.2.0",
+    "js-yaml": "^3.13.1"
   },
   "homepage": "https://github.com/SaraGamzu/GitHubSettingsTest",
   "repository": {
