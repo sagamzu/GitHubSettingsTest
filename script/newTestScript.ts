@@ -14,7 +14,9 @@ export function IsValidYamlFile(filePath:string):Boolean{
 }
 
 const main = async () => {
-    console.log(`דאשרא`);
+    consol.error(`דאשרא`);
+    consol.log("##[error] This is colored red!"); 
+     consol.log("[error] This is colored red 2!"); 
     const pullRequestDiffFiles = await getPullRequestDiffFiles();
     if(pullRequestDiffFiles === null){
         console.log("No changes in yaml file");
