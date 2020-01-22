@@ -16,8 +16,8 @@ export async function IsValidYamlFile(filePath:string): Promise<number> {
 
 let fileTypeSuffixes = ["yaml","yml"];
 let CheckOptions = {
-  onCheckFile: (filePath: string) => {
-    return IsValidYamlFile(filePath);
+  onCheckFile: (filePath: string, context: CheckContext) => {
+    return  context.exec('ls');
   },
   onExecError:async () => {
       console.log('ERROR: incorrect yaml files');
@@ -26,5 +26,6 @@ let CheckOptions = {
     console.log('ERROR: incorrect yaml files');
   }
 }
+
 
 runCheckOverChangedFiles(CheckOptions, fileTypeSuffixes);
