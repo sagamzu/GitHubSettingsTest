@@ -16,7 +16,7 @@ export async function GetDiffFiles(){
     const filterChangedFiles = changedFiles
       .filter(change => change.kind !== 'Deleted')
       .map(change => change.path)
-      .filter(filePath => filePath.endsWith('.json') && filePath.startsWith('specification/')); //???
+      .filter(filePath => filePath.endsWith('.yaml') || filePath.endsWith('.yml') ); //???
     
     if (filterChangedFiles.length === 0) {
       logger.logWarning("No changed spec json file"); //???
