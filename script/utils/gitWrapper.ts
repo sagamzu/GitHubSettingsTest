@@ -1,7 +1,8 @@
 import { cli, devOps } from '@azure/avocado';//??
 import * as logger from './logger';
+import './stringExtenssions'
 
-export async function GetDiffFiles(){
+export async function GetDiffFiles(fileTypeSuffixes?: string[], filePathFolderPreffixes?: string[]){
     const config = cli.defaultConfig();
     const pr = await devOps.createPullRequestProperties(config);
   
@@ -9,15 +10,15 @@ export async function GetDiffFiles(){
       console.log("undifined PR");
       return;
     }
-  
-     let changedFiles = await pr.diff();
+
+    let changedFiles = await pr.diff();
     console.log(`${changedFiles.length} files changed in current pr`);
-    logger.logWarning(`${changedFiles.length} files changed in current pr`);
 
     const filterChangedFiles = changedFiles
       .filter(change => change.kind !== 'Deleted')
       .map(change => change.path)
-      .filter(filePath => filePath.endsWith('.yaml') || filePath.endsWith('.yml') ); //???
+      .filter(filePath => fileTypeSuffixes === undefined|| filePath.endsWithAny(fileTypeSuffixes))
+      .filter(filePath => filePathFolderPreffixes === undefined || filePath.startsWithAny(filePathFolderPreffixes));
     
     if (filterChangedFiles.length === 0) {
       logger.logWarning("No changed spec json file"); //???
@@ -25,7 +26,8 @@ export async function GetDiffFiles(){
     }
 
     console.log(`${filterChangedFiles.length} changed files after filter`);
-    logger.logWarning(`${filterChangedFiles.length} changed files after filter`);
   
     return changedFiles;
   }
+
+
