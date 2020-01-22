@@ -14,12 +14,12 @@ export type CheckOptions = {
 }
 
 
-async function changedFilesValidator(checkOptions: CheckOptions){
+async function changedFilesValidator(checkOptions: CheckOptions, fileTypeSuffixes?: string[], filePathFolderPreffixes?: string[]){
 
   const exec = defineExecuteCommand();
   const context: CheckContext = { exec };
   
-  const changedFiles = await GetDiffFiles();
+  const changedFiles = await GetDiffFiles(fileTypeSuffixes, filePathFolderPreffixes);
   if (changedFiles === undefined) {
       return;
   }
@@ -47,8 +47,8 @@ async function changedFilesValidator(checkOptions: CheckOptions){
 }
 
 
-export function runCheckOverChangedFiles(options: CheckOptions){
-    changedFilesValidator(options)
+export function runCheckOverChangedFiles(options: CheckOptions, fileTypeSuffixes?: string[], filePathFolderPreffixes?: string[]){
+    changedFilesValidator(options, fileTypeSuffixes, filePathFolderPreffixes)
     .catch(e => {
         console.error(e); //???
         logger.logError(`Fatal Error. Please report to AzureSentinel@microsoft.com`);
