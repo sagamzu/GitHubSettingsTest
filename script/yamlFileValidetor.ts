@@ -24,5 +24,6 @@ runCheckOverChangedFiles({
       }, 
     onFinalFailed: async () => {
       console.log('ERROR: incorrect yaml files');
-    }
+    },
+    fileTypeSuffixes: ["yaml","yml"]
   })
