@@ -10,15 +10,20 @@ export async function GetDiffFiles(){
       return;
     }
   
-    const changedFiles = (await pr.diff())
+     let changedFiles = await pr.diff();
+    console.log(`${changedFiles.length} files changed in current pr`);
+
+    const filterChangedFiles = changedFiles
       .filter(change => change.kind !== 'Deleted')
       .map(change => change.path)
       .filter(filePath => filePath.endsWith('.json') && filePath.startsWith('specification/')); //???
     
-    if (changedFiles.length === 0) {
+    if (filterChangedFiles.length === 0) {
       logger.logWarning("No changed spec json file"); //???
       return;
     }
+
+    console.log(`${filterChangedFiles.length} changed files after filter`);
   
     return changedFiles;
   }
