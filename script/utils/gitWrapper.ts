@@ -12,6 +12,7 @@ export async function GetDiffFiles(){
   
      let changedFiles = await pr.diff();
     console.log(`${changedFiles.length} files changed in current pr`);
+    logger.logWarning(`${changedFiles.length} files changed in current pr`);
 
     const filterChangedFiles = changedFiles
       .filter(change => change.kind !== 'Deleted')
@@ -24,6 +25,7 @@ export async function GetDiffFiles(){
     }
 
     console.log(`${filterChangedFiles.length} changed files after filter`);
+    logger.logWarning(`${filterChangedFiles.length} changed files after filter`);
   
     return changedFiles;
   }
