@@ -14,16 +14,17 @@ export async function IsValidYamlFile(filePath:string): Promise<number> {
     }
 }
 
-
-runCheckOverChangedFiles({
-    onCheckFile: (filePath) => {
-      return IsValidYamlFile(filePath);
-    },
-    onExecError:async () => {
-        console.log('ERROR: incorrect yaml files');
-      }, 
-    onFinalFailed: async () => {
+let fileTypeSuffixes = ["yaml","yml"];
+let CheckOptions = {
+  onCheckFile: (filePath: string) => {
+    return IsValidYamlFile(filePath);
+  },
+  onExecError:async () => {
       console.log('ERROR: incorrect yaml files');
-    },
-    fileTypeSuffixes: ["yaml","yml"]
-  })
+    }, 
+  onFinalFailed: async () => {
+    console.log('ERROR: incorrect yaml files');
+  }
+}
+
+runCheckOverChangedFiles(CheckOptions, fileTypeSuffixes);
