@@ -31,7 +31,7 @@ export async function GetDiffFiles(fileTypeSuffixes?: string[], filePathFolderPr
 
     console.log(`${filterChangedFiles.length} changed files after filter`);
   
-    return changedFiles;
+    return filterChangedFiles;
   }
 
 
