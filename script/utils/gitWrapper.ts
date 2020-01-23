@@ -18,7 +18,7 @@ export async function GetDiffFiles(fileTypeSuffixes?: string[], filePathFolderPr
       .filter((change) => {
         
         console.log(`file path ${change.path}, file kind: ${change.kind}`);
-         change.kind !== 'Deleted';
+         return change.kind !== 'Deleted';
         })
       .map(change => change.path)
       .filter(filePath => fileTypeSuffixes === undefined|| filePath.endsWithAny(fileTypeSuffixes))
