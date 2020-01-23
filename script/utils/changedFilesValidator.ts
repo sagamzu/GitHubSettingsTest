@@ -28,7 +28,7 @@ async function changedFilesValidator(checkOptions: CheckOptions, fileTypeSuffixe
 
   for (const jsonFile of changedFiles) {
     try{
-      const validationResultCode = await checkOptions.onCheckFile(jsonFile.path, context);
+      const validationResultCode = await checkOptions.onCheckFile(jsonFile, context);
       if (validationResultCode !== ExitCode.SUCCESS) {
         retCode = ExitCode.ERROR;
       }
