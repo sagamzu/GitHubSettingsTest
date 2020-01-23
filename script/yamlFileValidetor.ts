@@ -1,4 +1,4 @@
-import { runCheckOverChangedFiles, CheckContext } from './utils/changedFilesValidator';
+import { runCheckOverChangedFiles } from './utils/changedFilesValidator';
 import {ExitCode } from './utils/exitCode';
 import yaml from 'js-yaml';
 import fs from 'fs';
@@ -10,7 +10,7 @@ export async function IsValidYamlFile(filePath:string): Promise<number> {
 
 let fileTypeSuffixes = ["yaml","yml"];
 let CheckOptions = {
-  onCheckFile: (filePath: string, context: CheckContext) => {
+  onCheckFile: (filePath: string) => {
       console.log(filePath);
       return IsValidYamlFile(filePath);
   },
