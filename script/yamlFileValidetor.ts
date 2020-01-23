@@ -18,10 +18,10 @@ let fileTypeSuffixes = ["yaml","yml"];
 let CheckOptions = {
   onCheckFile: (filePath: string, context: CheckContext) => {
       console.log(filePath);
-      return  context.exec('ls');
+      return context.exec(`cat ${filePath}`);
   },
-  onExecError:async () => {
-      console.log('ERROR: incorrect yaml files');
+  onExecError:async(e:any) => {
+      console.log(`ERROR: incorrect yaml files  ${e.message}`);
     }, 
   onFinalFailed: async () => {
     console.log('ERROR: incorrect yaml files');
