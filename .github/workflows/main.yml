@@ -20,6 +20,6 @@ jobs:
         - name: Azure Pipelines Action
           uses: Azure/pipelines@v1
           with:
-            azure-devops-project-url: https://dev.azure.com/SaraGamzu/GitHubSettingsTest
+            azure-devops-project-url: https://dev.azure.com/sarigamzu/GitHubSettingsTest
             azure-pipeline-name: 'Azure OpenAPI'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
