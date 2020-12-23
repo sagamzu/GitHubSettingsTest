@@ -1,0 +1,25 @@
+
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [feature/* ]
+  pull_request:
+    branches: [feature/* ]
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    build:
+        name: Call Azure Pipeline
+        runs-on: ubuntu-latest
+        steps:
+        - name: Azure Pipelines Action
+          uses: Azure/pipelines@v1
+          with:
+            azure-devops-project-url: https://dev.azure.com/SaraGamzu/GitHubSettingsTest
+            azure-pipeline-name: 'Azure OpenAPI'
+            azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
