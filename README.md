@@ -24,19 +24,19 @@ test
               }
           },
           {
-          ”Sid”: ”allow specific role to read/delete/change visibility of SQS messages and get queue url”,
-          ”Effect”: ”Allow”,
-          ”Principal”: {
-            ”AWS”: ”${roleArn}”
-          },
-          ”Action”: [
-            ”SQS:ChangeMessageVisibility”,
-            ”SQS:DeleteMessage”,
-            ”SQS:ReceiveMessage”,
-            ”SQS:GetQueueUrl”
-          ],
-          ”Resource”: ”${sqsArn}”
-        }
-      ]
+                ”Sid”: ”allow specific role to read/delete/change visibility of SQS messages and get queue url”,
+                ”Effect”: ”Allow”,
+                ”Principal”: {
+                  ”AWS”: ”${roleArn}”
+                },
+                ”Action”: [
+                  ”SQS:ChangeMessageVisibility”,
+                  ”SQS:DeleteMessage”,
+                  ”SQS:ReceiveMessage”,
+                  ”SQS:GetQueueUrl”
+                ],
+                ”Resource”: ”${sqsArn}”
+             }
+         ]
       }
 ```
