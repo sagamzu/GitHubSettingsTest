@@ -4,7 +4,7 @@
 ###  common polices
 test
 
-```json
+```JSON
 {
       ”Version”: ”2008-10-17”,
       ”Id”:”__default_policy_ID”,
